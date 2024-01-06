@@ -1,10 +1,9 @@
-
 import java.util.Random;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-class Philosopher  implements Runnable{
+class Philosopher implements Runnable {
     private Random timeGenerator = new Random();
 
 
@@ -20,16 +19,16 @@ class Philosopher  implements Runnable{
         this.monitor = monitor;
     }
 
-    public void run(){
-        try{
-            while(true){
+    public void run() {
+        try {
+            while (true) {
                 think(id);
                 monitor.pickUpChopsticks(id);
-                eat_count +=1;
+                eat_count += 1;
                 eat(id);
                 monitor.putDownChopsticks(id);
             }
-        } catch(InterruptedException e){
+        } catch (InterruptedException e) {
             System.out.println("Philosopher " + id + " was interrupted.\n");
 
         }
@@ -37,39 +36,40 @@ class Philosopher  implements Runnable{
     }
 
     public void print_eat_count() {
-        System.out.println("Philosopher " + id +" eat " + eat_count + " times.");
+        System.out.println("Philosopher " + id + " eat " + eat_count + " times.");
     }
 
 
-    private void think(int id) throws InterruptedException{
+    private void think(int id) throws InterruptedException {
         System.out.println("Philosopher " + id + " is thinking.");
         Thread.sleep(timeGenerator.nextInt(1000));
     }
 
 
-    public void eat(int id) throws InterruptedException{
+    public void eat(int id) throws InterruptedException {
         System.out.println("Philosopher " + id + " is eating");
         Thread.sleep(timeGenerator.nextInt(1000));
     }
 }
 
-class DiningPhilosophersMonitor{
+class DiningPhilosophersMonitor {
     private int NUM_PHILOSOPHERS;
-    private enum State {THINKING, HUNGRY, EATING};
 
-    private final Lock lock = new ReentrantLock();
-    private final Condition[] condition;
+    private enum State {THINKING, HUNGRY, EATING}
+
+    private Lock lock = new ReentrantLock();
+    private Condition[] condition;
 
     private State[] philosopherState;
 
     /**
      * mã khởi tạo
      */
-    public DiningPhilosophersMonitor(int numPhilosophers){
+    public DiningPhilosophersMonitor(int numPhilosophers) {
         this.NUM_PHILOSOPHERS = numPhilosophers;
         philosopherState = new State[numPhilosophers];
         condition = new Condition[NUM_PHILOSOPHERS];
-        for (int i = 0; i < numPhilosophers; i++){
+        for (int i = 0; i < numPhilosophers; i++) {
             philosopherState[i] = State.THINKING;
         }
         for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
@@ -77,14 +77,14 @@ class DiningPhilosophersMonitor{
         }
     }
 
-    public void pickUpChopsticks(int philosopherId) throws InterruptedException{
+    public void pickUpChopsticks(int philosopherId) throws InterruptedException {
 
         lock.lock();
         try {
             philosopherState[philosopherId] = State.HUNGRY;
             System.out.println("Philosopher " + philosopherId + " is hungry.");
             test(philosopherId);
-            if (philosopherState[philosopherId] != State.EATING){
+            if (philosopherState[philosopherId] != State.EATING) {
                 condition[philosopherId].await();
             }
 
@@ -94,13 +94,14 @@ class DiningPhilosophersMonitor{
         }
 
     }
+
     void test(int i) {
         if ((philosopherState[(i + 1) % NUM_PHILOSOPHERS] != State.EATING) &&
                 (philosopherState[i] == State.HUNGRY) &&
                 (philosopherState[(i + NUM_PHILOSOPHERS - 1) % NUM_PHILOSOPHERS] != State.EATING)) {
             philosopherState[i] = State.EATING;
             condition[i].signal();
-        }else if(philosopherState[i] == State.HUNGRY){
+        } else if (philosopherState[i] == State.HUNGRY) {
             System.out.println("Philosopher " + i + " is waiting to eat.");
         }
     }
