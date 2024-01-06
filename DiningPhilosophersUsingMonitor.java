@@ -6,7 +6,6 @@ import java.util.concurrent.locks.ReentrantLock;
 class Philosopher implements Runnable {
     private Random timeGenerator = new Random();
 
-
     private int id;
 
     private DiningPhilosophersMonitor monitor;
@@ -56,11 +55,11 @@ class DiningPhilosophersMonitor {
     private int NUM_PHILOSOPHERS;
 
     private enum State {THINKING, HUNGRY, EATING}
-
+    private State[] philosopherState;
     private Lock lock = new ReentrantLock();
     private Condition[] condition;
 
-    private State[] philosopherState;
+
 
     /**
      * mã khởi tạo
