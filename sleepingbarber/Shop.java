@@ -1,3 +1,133 @@
+/*
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Shop {
+    private final Lock lock = new ReentrantLock();
+    private final Condition barberAvailable = lock.newCondition();
+    private final Condition customerAvailable = lock.newCondition();
+
+    private int waitingChairs, noOfBarbers, availableBarbers;
+    private int TotalHairGotCuts, BackLaterCounter;
+    private List<Customer> CustomerList;
+    private List<Customer> CustomerBackLater;
+    private Random r = new Random();
+    private Session form;
+
+    public Shop(int nChairs, int nB, int nCustomers, Session form) {
+        this.waitingChairs = nChairs;
+        this.noOfBarbers = nB;
+        this.availableBarbers = nB;
+        this.form = form;
+        this.CustomerList = new LinkedList<>();
+        this.CustomerBackLater = new ArrayList<>(nCustomers);
+    }
+
+    // ... (other methods remain the same)
+
+    public void getHairCut(int B_ID) {
+        Customer customer;
+
+        lock.lock();
+        try {
+            while (CustomerList.size() == 0) {
+                form.SleepBarber(B_ID);
+                System.out.println("\nBarber " + B_ID + " is waiting for the customer and sleeps in his chair");
+                try {
+                    customerAvailable.await();
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Shop.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+            customer = CustomerList.remove(0);
+            System.out.println("Customer " + customer.getCustomerId() +
+                    " finds Barber available and gets a hair cut from Barber " + B_ID);
+        } finally {
+            lock.unlock();
+        }
+
+        int Delay;
+        try {
+            if (lock.tryLock() && CustomerList.size() == waitingChairs) {
+                barberAvailable.await();
+            }
+            form.BusyBarber(B_ID);
+            System.out.println("Barber " + B_ID + " does a hair cut of " + customer.getCustomerId());
+
+            double val = r.nextGaussian() * 2000 + 4000;
+            Delay = Math.abs((int) Math.round(val));
+            Thread.sleep(Delay);
+
+            System.out.println("\nCompleted hair cuts of " +
+                    customer.getCustomerId() + " by Barber " +
+                    B_ID + " in " + (int) (Delay / 1000) + " seconds.");
+            lock.lock();
+            try {
+                TotalHairGotCuts++;
+            } finally {
+                lock.unlock();
+            }
+
+            if (CustomerList.size() > 0) {
+                System.out.println("Barber " + B_ID + " Calls a Customer to enter the shop ");
+                barberAvailable.signal();
+            }
+            customerAvailable.signal();
+
+        } catch (InterruptedException e) {
+            // Handle interrupted exception
+        }
+    }
+
+    public void EnterShop(Customer customer) {
+        System.out.println("\nCustomer " + customer.getCustomerId() +
+                " tries to enter the shop to get a hair cut " + customer.getInTime());
+
+        lock.lock();
+        try {
+            if (CustomerList.size() == waitingChairs) {
+                System.out.println("\nNo chair available for customers " + customer.getCustomerId() +
+                        " so the customer leaves and will come back later");
+
+                CustomerBackLater.add(customer);
+                BackLaterCounter++;
+                return;
+            } else if (availableBarbers > 0) {
+                CustomerList.add(customer);
+                customerAvailable.signal();
+            } else {
+                CustomerList.add(customer);
+                form.TakeChair();
+                System.out.println("All Barbers are busy so Customer " +
+                        customer.getCustomerId() +
+                        " takes a chair in the waiting room");
+
+                if (CustomerList.size() == 1) {
+                    customerAvailable.signal();
+                }
+            }
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public List<Customer> Backlater() {
+        return CustomerBackLater;
+    }
+}
+
+ */
+
+
+
 package sleepingbarber;
 
 import java.util.ArrayList;
@@ -97,10 +227,6 @@ public class Shop {
 
     }
 
-
-
-
-
     public void EnterShop(Customer customer ){
         System.out.println("\nCustomer "+customer.getCustomerId()+
                 " tries to enter shop to get hair cut "
@@ -151,3 +277,4 @@ public class Shop {
     }
 
 }
+
