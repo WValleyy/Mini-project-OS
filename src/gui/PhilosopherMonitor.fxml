@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="309.0" fitWidth="309.0" layoutX="470.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assets/table.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="297.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dining Philosopher Monitor">
+         <font>
+            <Font name="Constantia Bold" size="20.0" />
+         </font>
+      </Text>
+      <Circle centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="587.0" layoutY="94.0" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="614.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P1">
+         <font>
+            <Font name="Constantia Bold" size="20.0" />
+         </font>
+      </Text>
+      <Circle centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="742.59" layoutY="206.75" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
+      <Circle centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="682.94" layoutY="388.82" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
+      <Circle centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="491.88" layoutY="388.82" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
+      <Circle centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="431.75" layoutY="206.75" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="769.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P2">
+         <font>
+            <Font name="Constantia Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="709.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P3">
+         <font>
+            <Font name="Constantia Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="517.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P4">
+         <font>
+            <Font name="Constantia Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="458.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P5">
+         <font>
+            <Font name="Constantia Bold" size="20.0" />
+         </font>
+      </Text>
+      <TextArea layoutX="81.0" layoutY="98.0" prefHeight="331.0" prefWidth="291.0" />
+      <!-- Restart -->
+      <Button fx:id="restartButton" onAction="handleRestartButton" layoutX="390.0" layoutY="517.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: B2A2E5;" text="Restart">
+         <font>
+            <Font name="Constantia Bold" size="15.0" />
+         </font>
+      </Button>
+      <!-- Back -->
+      <Button fx:id="backButton" onAction="handleBackButton" layoutX="253.0" layoutY="517.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="119.0" text="Back">
+         <font>
+            <Font name="Constantia Bold" size="15.0" />
+         </font>
+      </Button>
+      <!-- Analyze -->
+      <Button fx:id="analyzeButton" onAction="handleAnalyzeButton" layoutX="527.0" layoutY="517.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: DBD3F6;" text="Analyze">
+         <font>
+            <Font name="Constantia Bold" size="15.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0" layoutX="127.0" layoutY="447.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="600.0" maxWidth="900.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="229.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monitor in Operating System">
+         <font>
+            <Font name="Constantia Bold" size="32.0" />
+         </font>
+      </Text>
+      <Text layoutX="224.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Topic 11: Illustrate Process Synchronization using Monitor in Java">
+         <font>
+            <Font name="Constantia" size="16.0" />
+         </font>
+      </Text>
+      <!-- Dining Philosophers -->
+      <Button fx:id="diningPhilosophersButton" layoutX="76.0" layoutY="160.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: #385A64;" text="Dining Philosophers" textFill="#01dfbe" onAction="#handleDiningPhilosophers">
+         <font>
+            <Font name="Constantia Bold" size="20.0" />
+         </font>
+      </Button>
+      <!-- Sleeping Barber -->
+      <Button fx:id="sleepingBarberButton" layoutX="76.0" layoutY="230.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: #385A64;" text="Sleeping Barber" textFill="#01dfbe" onAction="#handleSleepingBarber">
+         <font>
+            <Font name="Constantia Bold" size="20.0" />
+         </font>
+      </Button>
+      <!-- Producers-Consumers -->
+      <Button fx:id="producersConsumbersButton" layoutX="76.0" layoutY="300.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" text="Producers-Consumers" textFill="#375a65" onAction="#handleProducersConsumers">
+         <font>
+            <Font name="Constantia" size="16.0" />
+         </font>
+      </Button>
+      <!-- Readers-Writers -->
+      <Button fx:id="readerWriterButton" layoutX="76.0" layoutY="370.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: fff; -fx-border-color: 1D343C;" text="Readers-Writers" textFill="#375a65" onAction="#handleReadersWriters">
+         <font>
+            <Font name="Constantia" size="16.0" />
+         </font>
+      </Button>
+      <!-- Bathroom Problem -->
+      <Button fx:id="bathroomProblemButton" layoutX="76.0" layoutY="440.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: fff; -fx-border-color: 1D343C;" text="Bathroom Problem" textFill="#375a65" onAction="#handleBathroomProblem">
+         <font>
+            <Font name="Constantia" size="16.0" />
+         </font>
+      </Button>
+      <!-- Using Barriers -->
+      <Button fx:id="usingBarriersButton" layoutX="76.0" layoutY="510.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: fff; -fx-border-color: 1D343C;" text="Using Barriers" textFill="#375a65" onAction="#handleUsingBarriers">
+         <font>
+            <Font name="Constantia" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="469.0" fitWidth="443.0" layoutX="411.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assets/5357389_2794209.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
