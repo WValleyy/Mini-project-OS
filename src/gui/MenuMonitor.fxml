@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane maxHeight="600.0" maxWidth="900.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="600.0" maxWidth="900.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
    <children>
       <Text layoutX="229.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monitor in Operating System">
          <font>
@@ -33,32 +33,32 @@
          </font>
       </Button>
       <!-- Producers-Consumers -->
-      <Button fx:id="producersConsumbersButton" layoutX="76.0" layoutY="300.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" text="Producers-Consumers" textFill="#375a65" onAction="#handleProducersConsumers">
+      <Button fx:id="producersConsumbersButton" layoutX="76.0" layoutY="300.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" text="Producers-Consumers" textFill="#375a65">
          <font>
             <Font name="Constantia" size="16.0" />
          </font>
       </Button>
       <!-- Readers-Writers -->
-      <Button fx:id="readerWriterButton" layoutX="76.0" layoutY="370.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: fff; -fx-border-color: 1D343C;" text="Readers-Writers" textFill="#375a65" onAction="#handleReadersWriters">
+      <Button fx:id="readerWriterButton" layoutX="76.0" layoutY="370.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: fff; -fx-border-color: 1D343C;" text="Readers-Writers" textFill="#375a65">
          <font>
             <Font name="Constantia" size="16.0" />
          </font>
       </Button>
       <!-- Bathroom Problem -->
-      <Button fx:id="bathroomProblemButton" layoutX="76.0" layoutY="440.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: fff; -fx-border-color: 1D343C;" text="Bathroom Problem" textFill="#375a65" onAction="#handleBathroomProblem">
+      <Button fx:id="bathroomProblemButton" layoutX="76.0" layoutY="440.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: fff; -fx-border-color: 1D343C;" text="Bathroom Problem" textFill="#375a65">
          <font>
             <Font name="Constantia" size="16.0" />
          </font>
       </Button>
       <!-- Using Barriers -->
-      <Button fx:id="usingBarriersButton" layoutX="76.0" layoutY="510.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: fff; -fx-border-color: 1D343C;" text="Using Barriers" textFill="#375a65" onAction="#handleUsingBarriers">
+      <Button fx:id="usingBarriersButton" layoutX="76.0" layoutY="510.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: fff; -fx-border-color: 1D343C;" text="Using Barriers" textFill="#375a65">
          <font>
             <Font name="Constantia" size="16.0" />
          </font>
       </Button>
       <ImageView fitHeight="469.0" fitWidth="443.0" layoutX="411.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../assets/5357389_2794209.jpg" />
+            <Image url="@./5357389_2794209.jpg" />
          </image>
       </ImageView>
    </children>

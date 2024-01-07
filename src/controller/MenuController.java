@@ -13,7 +13,7 @@ import javafx.scene.Node;
 public class MenuController {
     @FXML
     private void handleDiningPhilosophers(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/Philosopher.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/PhilosopherMonitor.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -21,4 +21,7 @@ public class MenuController {
         stage.setTitle("Dining Philosophers");
         stage.show();
     }
+
+    @FXML
+    private void handleSleepingBarber(ActionEvent event) throws IOException {}
 }
