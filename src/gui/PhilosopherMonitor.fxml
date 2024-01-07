@@ -11,11 +11,11 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PhilosopherMonitorController">
    <children>
       <ImageView fitHeight="309.0" fitWidth="309.0" layoutX="470.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../assets/table.png" />
+            <Image url="@./table.png" />
          </image>
       </ImageView>
       <Text layoutX="297.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dining Philosopher Monitor">
@@ -53,21 +53,21 @@
             <Font name="Constantia Bold" size="20.0" />
          </font>
       </Text>
-      <TextArea layoutX="81.0" layoutY="98.0" prefHeight="331.0" prefWidth="291.0" />
+      <TextArea fx:id="outputTextArea" layoutX="81.0" layoutY="98.0" prefHeight="331.0" prefWidth="291.0" />
       <!-- Restart -->
-      <Button fx:id="restartButton" onAction="handleRestartButton" layoutX="390.0" layoutY="517.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: B2A2E5;" text="Restart">
+      <Button fx:id="restartButton" onAction="#handleRestartButton" layoutX="390.0" layoutY="517.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: B2A2E5;" text="Restart">
          <font>
             <Font name="Constantia Bold" size="15.0" />
          </font>
       </Button>
       <!-- Back -->
-      <Button fx:id="backButton" onAction="handleBackButton" layoutX="253.0" layoutY="517.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="119.0" text="Back">
+      <Button fx:id="backButton" onAction="#handleBackButton" layoutX="253.0" layoutY="517.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="119.0" text="Back">
          <font>
             <Font name="Constantia Bold" size="15.0" />
          </font>
       </Button>
       <!-- Analyze -->
-      <Button fx:id="analyzeButton" onAction="handleAnalyzeButton" layoutX="527.0" layoutY="517.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: DBD3F6;" text="Analyze">
+      <Button fx:id="analyzeButton" onAction="#handleAnalyzeButton" layoutX="527.0" layoutY="517.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: DBD3F6;" text="Analyze">
          <font>
             <Font name="Constantia Bold" size="15.0" />
          </font>

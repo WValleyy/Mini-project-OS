@@ -27,7 +27,6 @@ class Philosopher implements Runnable {
             }
         } catch (InterruptedException e) {
             System.out.println("Philosopher " + id + " was interrupted.\n");
-
         }
     }
 
