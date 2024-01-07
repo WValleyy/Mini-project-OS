@@ -30,19 +30,22 @@ class Philosopher implements Runnable {
         }
     }
 
-    public void print_eat_count() {
+    public String print_eat_count() {
         System.out.println("Philosopher " + id + " eat " + eat_count + " times.");
+        return "Philosopher" + id + " eat " + eat_count + " times.";
     }
 
 
-    private void think(int id) throws InterruptedException {
+    private String think(int id) throws InterruptedException {
         System.out.println("Philosopher " + id + " is thinking.");
         Thread.sleep(timeGenerator.nextInt(1000));
+        return "Philosopher " + id + " is thinking.";
     }
 
 
-    public void eat(int id) throws InterruptedException {
+    public String eat(int id) throws InterruptedException {
         System.out.println("Philosopher " + id + " is eating");
         Thread.sleep(timeGenerator.nextInt(1000));
+        return "Philospher " + id + " is eating";
     }
 }

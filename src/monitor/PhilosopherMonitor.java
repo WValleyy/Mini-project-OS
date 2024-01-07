@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-class PhilosopherMonitor {
+public class PhilosopherMonitor {
     private int NUM_PHILOSOPHERS;
 
     private enum State {THINKING, HUNGRY, EATING}
@@ -37,7 +37,6 @@ class PhilosopherMonitor {
                 condition[philosopherId].await();
             }
 
-
         } finally {
             lock.unlock();
         }
@@ -69,5 +68,9 @@ class PhilosopherMonitor {
         } finally {
             lock.unlock();
         }
+    }
+
+    public State[] getPhilosopherState() {
+        return philosopherState;   
     }
 }

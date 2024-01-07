@@ -3,11 +3,14 @@ package monitor;
 public class Main {
     private static final int NUM_PHILOSOPHERS = 5;
 
+    private static OutputListener outputListener;
+
     public static void main(String[] args) throws InterruptedException {
         Philosopher[] philosophers = new Philosopher[NUM_PHILOSOPHERS];
         Thread[] philosopherThreads = new Thread[NUM_PHILOSOPHERS];
 
         PhilosopherMonitor monitor = new PhilosopherMonitor(NUM_PHILOSOPHERS);
+
         for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
             philosophers[i] = new Philosopher(i, monitor);
             philosopherThreads[i] = new Thread(philosophers[i]);
@@ -28,6 +31,15 @@ public class Main {
         for (Philosopher philosopher : philosophers) {
             philosopher.print_eat_count();
         }
+    }
 
+    public static void setOutputListener(OutputListener listener) {
+        outputListener = listener;
+    }
+
+    public static void logEvent(String event) {
+        if (outputListener != null) {
+            outputListener.onEventLogged(event);
+        }
     }
 }
