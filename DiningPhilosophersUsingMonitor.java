@@ -22,7 +22,6 @@ class Philosopher implements Runnable {
         try {
             while (true) {
                 think(id);
-                Thread.sleep(timeGenerator.nextInt(1000));
                 monitor.pickUpChopsticks(id);
                 eat_count += 1;
                 eat(id);
