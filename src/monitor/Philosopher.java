@@ -44,7 +44,7 @@ class Philosopher implements Runnable {
 
     public void eat(int id) throws InterruptedException {
         System.out.println("Philosopher " + id + " is eating");
-        Main.logEvent("Philosopher" + id + " is eating");
+        Main.logEvent("Philosopher " + id + " is eating");
         Thread.sleep(timeGenerator.nextInt(3000));
     }
 }

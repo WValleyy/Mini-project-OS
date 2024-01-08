@@ -20,8 +20,6 @@ public class PhilosopherMonitorController implements OutputListener{
     @FXML
     private TextArea outputTextArea;
 
-    private PhilosopherMonitor monitor;
-
     @FXML
     public Circle philosopher1Circle;
 
@@ -74,28 +72,26 @@ public class PhilosopherMonitorController implements OutputListener{
     public void onEventLogged(String event) {
         updateOutput(event);
 
+        PhilosopherMonitor monitor = Main.getPhilosopherMonitor();
+        if (monitor == null) {
+            System.out.println(">> Monitor is Null");
+        }
+
         if (monitor != null) {
             String[] philosopherStates = monitor.getPhilosopherStates();
-            System.out.println("Before");
             Platform.runLater(() -> {
-                System.out.println("Updating GUI from Platform.runLater");
-                outputTextArea.clear();
-                // for (String state : philosopherStates) {
-                //     outputTextArea.appendText(state + "\n");
-                // }
+                // outputTextArea.clear();
                 for (int i = 0; i < philosopherStates.length; i++) {
                     String state = philosopherStates[i];
-                    outputTextArea.appendText(state + "\n");
+                    // outputTextArea.appendText(state + "\n");
 
-                    // Lấy Circle tương ứng với triết gia i
                     Circle philosopherCircle = getPhilosopherCircle(i);
 
-                    // Đặt màu sắc dựa trên trạng thái
-                    if (state.contains("thinking")) {
+                    if (state.contains("THINKING")) {
                         philosopherCircle.setFill(javafx.scene.paint.Color.valueOf("#b2a2e5"));
-                    } else if (state.contains("eating")) {
+                    } else if (state.contains("EATING")) {
                         philosopherCircle.setFill(javafx.scene.paint.Color.GREEN);
-                    } else if (state.contains("hungry")) {
+                    } else if (state.contains("HUNGRY")) {
                         philosopherCircle.setFill(javafx.scene.paint.Color.RED);
                     }
                 }

@@ -79,7 +79,9 @@ public class PhilosopherMonitor {
         String[] states = new String[NUM_PHILOSOPHERS];
         for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
             states[i] = philosopherState[i].toString();
+            System.out.print(states[i]);
         }
+        System.out.println("\n");
         return states;
     }
 }
