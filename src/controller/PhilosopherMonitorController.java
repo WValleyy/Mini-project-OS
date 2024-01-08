@@ -103,19 +103,14 @@ public class PhilosopherMonitorController implements OutputListener{
         // Lấy Circle dựa vào chỉ số của triết gia
         switch (philosopherIndex) {
             case 0:
-                System.out.println("Returning philosopher1Circle");
                 return philosopher1Circle;
             case 1:
-                System.out.println("Returning philosopher2Circle");
                 return philosopher2Circle;
             case 2:
-                System.out.println("Returning philosopher3Circle");
                 return philosopher3Circle;
             case 3:
-                System.out.println("Returning philosopher4Circle");
                 return philosopher4Circle;
             case 4:
-                System.out.println("Returning philosopher5Circle");
                 return philosopher5Circle;
             default:
                 return null;

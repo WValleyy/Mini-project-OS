@@ -31,8 +31,8 @@ public class PhilosopherMonitor {
         lock.lock();
         try {
             philosopherState[philosopherId] = State.HUNGRY;
-            System.out.println("Philosopher " + philosopherId + " is hungry.");
-            Main.logEvent("Philosopher " + philosopherId + " is hungry");
+            System.out.println("Philosopher " + (philosopherId+1) + " is hungry.");
+            Main.logEvent("Philosopher " + (philosopherId+1) + " is hungry");
             test(philosopherId);
             if (philosopherState[philosopherId] != State.EATING) {
                 condition[philosopherId].await();
@@ -49,18 +49,18 @@ public class PhilosopherMonitor {
                 (philosopherState[(i + NUM_PHILOSOPHERS - 1) % NUM_PHILOSOPHERS] != State.EATING)) {
             philosopherState[i] = State.EATING;
             condition[i].signal();
-            Main.logEvent("Philosopher " + i + " is eating");
+            Main.logEvent("Philosopher " + (i+1) + " is eating");
         } else if (philosopherState[i] == State.HUNGRY) {
-            System.out.println("Philosopher " + i + " is waiting to eat.");
-            Main.logEvent("Philosopher " + i + " is waiting to eat");
+            System.out.println("Philosopher " + (i+1) + " is waiting to eat.");
+            Main.logEvent("Philosopher " + (i+1) + " is waiting to eat");
         }
     }
 
     public void putDownChopsticks(int philosopherId) {
         lock.lock();
         try {
-            System.out.println("Philosopher " + philosopherId + " is done eating and put down chopsticks.");            
-            Main.logEvent("Philosopher " + philosopherId + " is done eating and put down chopsticks.");
+            System.out.println("Philosopher " + (philosopherId+1) + " is done eating and put down chopsticks.");            
+            Main.logEvent("Philosopher " + (philosopherId+1) + " is thinking.");
 
             philosopherState[philosopherId] = State.THINKING;
 
@@ -79,7 +79,7 @@ public class PhilosopherMonitor {
         String[] states = new String[NUM_PHILOSOPHERS];
         for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
             states[i] = philosopherState[i].toString();
-            System.out.print(states[i]);
+            System.out.print(states[i] + " - ");
         }
         System.out.println("\n");
         return states;

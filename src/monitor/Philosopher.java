@@ -26,25 +26,25 @@ class Philosopher implements Runnable {
                 monitor.putDownChopsticks(id);
             }
         } catch (InterruptedException e) {
-            System.out.println("Philosopher " + id + " was interrupted.\n");
+            System.out.println("Philosopher " + (id+1) + " was interrupted.\n");
         }
     }
 
     public void print_eat_count() {
-        System.out.println("Philosopher " + id + " eat " + eat_count + " times.");
+        System.out.println("Philosopher " + (id+1) + " eat " + eat_count + " times.");
     }
 
 
     private void think(int id) throws InterruptedException {
-        System.out.println("Philosopher " + id + " is thinking.");
-        Main.logEvent("Philosopher " + id + " is thinking");
+        System.out.println("Philosopher " + (id+1) + " is thinking.");
+        // Main.logEvent("Philosopher " + (id+1) + " is thinking");
         Thread.sleep(timeGenerator.nextInt(3000));
     }
 
 
     public void eat(int id) throws InterruptedException {
-        System.out.println("Philosopher " + id + " is eating");
-        Main.logEvent("Philosopher " + id + " is eating");
+        System.out.println("Philosopher " + (id+1) + " is eating");
+        // Main.logEvent("Philosopher " + (id+1) + " is eating");
         Thread.sleep(timeGenerator.nextInt(3000));
     }
 }
