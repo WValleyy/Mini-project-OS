@@ -27,7 +27,7 @@ public class Main {
         for (Thread thread : philosopherThreads) {
             thread.interrupt();
         }
-        // in ra số lần ăn
+
         for (Philosopher philosopher : philosophers) {
             philosopher.print_eat_count();
         }
@@ -38,8 +38,11 @@ public class Main {
     }
 
     public static void logEvent(String event) {
+        System.out.println("Event logged: " + event);
         if (outputListener != null) {
             outputListener.onEventLogged(event);
+        } else {
+            System.out.println(event);
         }
     }
 }

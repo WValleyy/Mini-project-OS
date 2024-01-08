@@ -23,31 +23,36 @@
             <Font name="Constantia Bold" size="20.0" />
          </font>
       </Text>
-      <Circle centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="587.0" layoutY="94.0" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
+      <!-- Philosopher 1 -->
+      <Circle fx:id="philosopher1Circle" centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="587.0" layoutY="94.0" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
       <Text layoutX="614.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P1">
          <font>
             <Font name="Constantia Bold" size="20.0" />
          </font>
       </Text>
-      <Circle centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="742.59" layoutY="206.75" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
-      <Circle centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="682.94" layoutY="388.82" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
-      <Circle centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="491.88" layoutY="388.82" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
-      <Circle centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="431.75" layoutY="206.75" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
+      <!-- Philosopher 2 -->
+      <Circle fx:id="philosopher2Circle" centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="742.59" layoutY="206.75" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
       <Text layoutX="769.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P2">
          <font>
             <Font name="Constantia Bold" size="20.0" />
          </font>
       </Text>
+      <!-- Philosopher 3 -->
+      <Circle fx:id="philosopher3Circle" centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="682.94" layoutY="388.82" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
       <Text layoutX="709.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P3">
          <font>
             <Font name="Constantia Bold" size="20.0" />
          </font>
       </Text>
+      <!-- Philosopher 4 -->
+      <Circle fx:id="philosopher4Circle" centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="491.88" layoutY="388.82" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
       <Text layoutX="517.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P4">
          <font>
             <Font name="Constantia Bold" size="20.0" />
          </font>
       </Text>
+      <!-- Philosopher 5 -->
+      <Circle fx:id="philosopher5Circle" centerX="37.5" centerY="37.5" fill="#b2a2e5" layoutX="431.75" layoutY="206.75" radius="37.5" stroke="BLACK" strokeType="INSIDE" />
       <Text layoutX="458.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P5">
          <font>
             <Font name="Constantia Bold" size="20.0" />
