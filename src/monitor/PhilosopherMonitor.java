@@ -32,6 +32,7 @@ public class PhilosopherMonitor {
         try {
             philosopherState[philosopherId] = State.HUNGRY;
             System.out.println("Philosopher " + philosopherId + " is hungry.");
+            Main.logEvent("Philosopher " + philosopherId + " is hungry");
             test(philosopherId);
             if (philosopherState[philosopherId] != State.EATING) {
                 condition[philosopherId].await();
@@ -48,15 +49,19 @@ public class PhilosopherMonitor {
                 (philosopherState[(i + NUM_PHILOSOPHERS - 1) % NUM_PHILOSOPHERS] != State.EATING)) {
             philosopherState[i] = State.EATING;
             condition[i].signal();
+            Main.logEvent("Philosopher " + i + " is eating");
         } else if (philosopherState[i] == State.HUNGRY) {
             System.out.println("Philosopher " + i + " is waiting to eat.");
+            Main.logEvent("Philosopher " + i + " is waiting to eat");
         }
     }
 
     public void putDownChopsticks(int philosopherId) {
         lock.lock();
         try {
-            System.out.println("Philosopher " + philosopherId + " is done eating and put down chopsticks.");
+            System.out.println("Philosopher " + philosopherId + " is done eating and put down chopsticks.");            
+            Main.logEvent("Philosopher " + philosopherId + " is done eating and put down chopsticks.");
+
             philosopherState[philosopherId] = State.THINKING;
 
             int leftPhilosopher = (philosopherId + NUM_PHILOSOPHERS - 1) % NUM_PHILOSOPHERS;
@@ -70,7 +75,13 @@ public class PhilosopherMonitor {
         }
     }
 
-    public State[] getPhilosopherState() {
-        return philosopherState;   
+    public String[] getPhilosopherStates() {
+        String[] states = new String[NUM_PHILOSOPHERS];
+        for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
+            states[i] = philosopherState[i].toString();
+            System.out.print(states[i]);
+        }
+        System.out.println("\n");
+        return states;
     }
 }
