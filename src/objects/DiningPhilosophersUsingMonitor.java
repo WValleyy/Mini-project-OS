@@ -31,6 +31,7 @@ class Philosopher implements Runnable {
             System.out.println("Philosopher " + id + " was interrupted.\n");
 
         }
+
     }
 
     public void print_eat_count() {
@@ -120,6 +121,7 @@ class DiningPhilosophersMonitor {
             lock.unlock();
         }
     }
+
 }
 
 
