@@ -26,8 +26,8 @@ public class Controller2 {
     private ImageView imageView;
     @FXML
     private FlowPane flowPane;
-    private PrintStream originalOut;
-    private ByteArrayOutputStream outputStream;
+    // private PrintStream originalOut;
+    // private ByteArrayOutputStream outputStream;
     private List<String> capturedTexts;
     private Image image1 = new Image(getClass().getResourceAsStream("/SleepingBarberGUI/gui/resources/sleep.png"));
     private Image image2 = new Image(getClass().getResourceAsStream("/SleepingBarberGUI/gui/resources/working.jpg"));

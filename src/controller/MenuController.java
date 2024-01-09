@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 
@@ -23,5 +24,20 @@ public class MenuController {
     }
 
     @FXML
-    private void handleSleepingBarber(ActionEvent event) throws IOException {}
+    private void handleSleepingBarber(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/SleepingBarberGUI/gui/resources/Outer.fxml"));
+            Image image = new Image(getClass().getResourceAsStream("/SleepingBarberGUI/gui/resources/sic.jpg"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.getIcons().add(image);
+            stage.setScene(scene);
+            stage.setTitle("Sleeping Barber");
+            stage.show();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

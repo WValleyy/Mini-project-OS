@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 class BarberShop {
-    private int totalChairs;
+    public int totalChairs;
     private int availableChairs;
     private LinkedList<Customer> waitingCustomers;
 
@@ -44,6 +44,10 @@ class BarberShop {
     }
     public int getAvailableChairs() {
         return availableChairs;
+    }
+
+    public void print_chairs() {
+        System.out.println(totalChairs);
     }
 
 }
