@@ -1,6 +1,6 @@
 package Reader_Writer;
 
-public class Main {
+public class MainRW {
 	public static void main(String[] args){
 		ReaderWriterMonitor monitor = new ReaderWriterMonitor();
 		

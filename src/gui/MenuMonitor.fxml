@@ -39,7 +39,7 @@
          </font>
       </Button>
       <!-- Readers-Writers -->
-      <Button fx:id="readerWriterButton" layoutX="76.0" layoutY="370.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: fff; -fx-border-color: 1D343C;" text="Readers-Writers" textFill="#375a65">
+      <Button fx:id="readerWriterButton" layoutX="76.0" layoutY="370.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: fff; -fx-border-color: 1D343C;" text="Readers-Writers" textFill="#375a65" onAction="#handleReaderWriter">
          <font>
             <Font name="Constantia" size="16.0" />
          </font>
