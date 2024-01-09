@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.Node;
+import Reader_Writer.MainRW;
 
 public class MenuController {
     @FXML
@@ -39,5 +40,13 @@ public class MenuController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void handleReaderWriter(ActionEvent event) throws IOException {
+        Thread mainThread = new Thread(() -> {
+            MainRW.main(new String[0]);
+        });
+        mainThread.start();
     }
 }

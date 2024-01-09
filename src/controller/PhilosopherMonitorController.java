@@ -37,6 +37,7 @@ public class PhilosopherMonitorController implements OutputListener{
 
     @FXML
     private void handleRestartButton(ActionEvent event) {
+        outputTextArea.clear();
         Thread mainThread = new Thread(() -> {
             try {
                 Main.setOutputListener(this);
